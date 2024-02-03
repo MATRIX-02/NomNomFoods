@@ -1,4 +1,8 @@
 @import url("./Styles/_Header.css");
+@import url("./Styles/_Body.css");
+@import url("./Styles/_ResMenuList.css");
+@import url("./Styles/_RestaurantCard.css");
+@import url("./Styles/_Shimmer.css");
 
 *,
 *::after,

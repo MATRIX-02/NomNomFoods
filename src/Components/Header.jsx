@@ -10,24 +10,24 @@ const Header = () => {
       <div className="nav-items">
         <ul>
           <li>
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to="/NomNomFoods">
               Home
             </Link>
           </li>
           <li>
             {" "}
-            <Link className="nav-link" to="/about">
+            <Link className="nav-link" to="/NomNomFoods/about">
               {" "}
               About Us{" "}
             </Link>
           </li>
           <li>
-            <Link className="nav-link" to="/contact">
+            <Link className="nav-link" to="/NomNomFoods/contact">
               Contact Us
             </Link>
           </li>
           <li>
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to="/NomNomFoods">
               Cart
             </Link>
           </li>
