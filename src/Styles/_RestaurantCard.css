@@ -1,0 +1,159 @@
+.menu {
+    width: 50%;
+    margin: auto;
+    padding: 5rem 2rem 2rem;
+  }
+  
+  .menu-row1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .menu  p{
+      font-weight: 300;
+      font-size: .75rem;
+      margin: .3rem 0;
+      color: #7e808c;
+  }
+  
+  .hotel-name {
+    font-size: 1.2rem;
+    color: #282c3f;
+  }
+  
+  .menu-rating-box{
+      border: 1px solid #e9e9eb;
+      border-radius: 6px;
+      box-shadow: rgb(249, 249, 249) 0px 1px 5px 0px;	
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+  }
+  
+  .menu-rating-box p{
+      padding: 0 .3rem;
+  }
+  
+  .menu-rating-box hr{
+      width: 80%;
+      border: none;
+      border: .1rem solid #e9e9eb;
+  }
+  
+  .menu-rating{
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      align-content: baseline;
+  }
+  
+  .menu-rating >p{
+      font-size: 0.9rem;
+      /* margin-top: .2rem; */
+     color: #3D9B6D;
+  }
+  
+  .menu-separator {
+    border: none;
+    border-bottom: 1px dashed #d3d3d3;
+    margin: 18px 0;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    outline: none;
+  }
+  
+  
+  
+  .menu-row2 h4 {
+      display: flex;
+      align-items: center;
+      font-size: .9rem;
+      color: #3e4512;
+  }
+  
+  h4 > span{
+      display: flex;
+      margin-right: 2rem;
+  }
+  
+  
+  .menu-row2 h4 svg{
+      box-sizing:content-box;
+      /* padding: 0 .5rem; */
+      margin-right: .7rem;
+  }
+  
+  .offers-carausel{
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      margin: 1rem 0;
+      white-space: nowrap;
+      
+  }
+  
+  .offer-box{
+      display: flex;
+      justify-content: left;
+      flex-direction: column;
+      border: 1px solid #e9e9eb;
+      border-radius: 6px;
+      box-shadow: rgb(249, 249, 249) 0px 1px 5px 0px;	
+      /* height: 4rem; */
+      /* width: 20rem; */
+      padding: .5rem;
+      padding-right: 3rem;
+      margin: 0 .5rem;
+      cursor: pointer;
+      flex-shrink: 0;
+      font-size: .9rem;
+  }
+  
+  .offer-box > div{
+      align-items: center;
+      display: flex;
+      color: #3e4512;
+      font-weight: 600;
+  }
+  
+  .offer-box > span{
+      color: #686B78;
+      font-size: .7rem;
+  }
+  
+  .menu-row3 {
+      margin: 3rem 0;
+  }
+  
+  .menu-row3 h4{
+      font-weight: 300;
+      color: #535665;
+  }
+  
+  .menu-row3 svg{
+      fill: #008000;
+  }
+  
+  .menu-row3 hr{
+      border: none;
+      border-bottom: 1px solid #d3d3d3;
+      margin: 18px 0;
+  }
+  
+  .show-veg{
+      border: 1px solid #e9e9eb;
+      border-radius: 6px;
+      box-shadow: rgb(249, 249, 249) 0px 1px 5px 0px;	
+      width: fit-content;
+      padding: .5rem;
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+      background: #fff;
+      color: #535665;
+  }
+  
+  .show-veg:hover{
+      background: #c4f1b9;
+  }

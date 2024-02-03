@@ -1,0 +1,53 @@
+.shimmer-container {
+	width: 83%;
+	display: flex;
+	justify-content:left baseline;
+	flex-wrap: wrap;
+	margin: auto;
+}
+
+.shimmer-card {
+    margin: 2rem;
+	width: 20rem;
+	height: 20rem;
+    transition: all .3s ease;
+    /* border: solid 1px red; */
+}
+
+.shimmer-card:hover{
+    scale: 1.1;
+	cursor: pointer;
+}
+
+.shimmer-img{
+    height: 70%;
+    border-radius: 1rem;
+    background: linear-gradient(to right, #F6F6F6 8%, #F0F0F0 18%, #F6F6F6 33%);
+}
+
+.shimmer-desc{
+    /* border: solid 1px red; */
+    background: linear-gradient(to right, #F6F6F6 8%, #F0F0F0 18%, #F6F6F6 33%);
+    height: 5%;
+    margin: .5rem 0 0 .5rem;
+    border-radius: .2rem;
+    width: 90%;
+}
+
+.shimmer-img, .shimmer-desc{
+    animation-duration: 2.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+    background-size: 1200px 100%;
+}
+
+@keyframes shimmer{
+    0%{
+        background-position: -1200px 0;
+    }
+    100%{
+        background-position: 1200px 0;
+    }
+}
