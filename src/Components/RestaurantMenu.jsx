@@ -1,27 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Shimmer from "./Shimmer";
 import MenuOffers from "./MenuOffers";
 import { useParams } from "react-router-dom";
-import { MENU_API } from "../../utils/constants";
 import ResMenuList from "./ResMenuList";
+import useRestaurantMenu from "../../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
   const [isVeg, setIsVeg] = useState(false);
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
 
-  const fetchMenu = async () => {
-    const data = await fetch(MENU_API + resId);
-
-    const json = await data.json();
-
-    setResInfo(json.data);
-  };
+  const resInfo = useRestaurantMenu(resId);
 
   const {
     name,

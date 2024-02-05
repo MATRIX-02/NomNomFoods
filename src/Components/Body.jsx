@@ -2,6 +2,8 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 // import LoadingBar from "react-top-loading-bar";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../../utils/useOnlineStatus";
+import { SWIGGY_API } from "../../utils/constants";
 // import resList from "../utils/config";            //enable this to use hard coded restaurant list data in case of API faliure
 
 const Body = () => {
@@ -16,7 +18,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4795493&lng=77.5165962&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+     SWIGGY_API
     );
 
     const json = await data.json();
@@ -37,21 +39,12 @@ const Body = () => {
     setFilteredRestaurant(selectedRestaurants || []);
   };
 
-  // const [progress, setProgress] = useState(0);
+  const onlineStatus = useOnlineStatus();
 
-  // if (listOfRestaurants.length === 0) {
-  // 	return (
-  // 		<>
-  // 			<Shimmer />
-  // 			<LoadingBar
-  // 				color="#f11946"
-  // 				progress={progress}
-  // 				onLoaderFinished={() => setProgress(0)}
-  // 			/>
-  // 		</>
-  // 	);
-  // }
-  
+  if (onlineStatus === false)
+    return (
+      <h1>Looks like you are offline!! Please check your Internet Connection</h1>
+    );
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
@@ -87,7 +80,7 @@ const Body = () => {
           <button
             className="filter-btn"
             onClick={(e) => {
-				e.preventDefault();
+              e.preventDefault();
               const filteredList = listOfRestaurants.filter(
                 (res) => res.info.avgRating > 4
               );
