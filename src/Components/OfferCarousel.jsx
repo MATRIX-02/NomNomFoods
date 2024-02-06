@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { OFFERLOGO_URL } from "../../utils/constants";
 
-const MenuOffers = ({ info }) => {
+const OfferCarousel = ({ info }) => {
   const { header, offerLogo, couponCode, description } = info;
 
   return (
@@ -17,4 +17,4 @@ const MenuOffers = ({ info }) => {
   );
 };
 
-export default MenuOffers;
+export default OfferCarousel;

@@ -1,45 +1,24 @@
-import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect } from "react";
-// import LoadingBar from "react-top-loading-bar";
-import Shimmer from "./Shimmer";
+import { useState } from "react";
+
+// Custom Hooks
 import useOnlineStatus from "../../utils/useOnlineStatus";
-import { SWIGGY_API } from "../../utils/constants";
+import useRestaurantList from "../../utils/useRestaurantList";
+
+// Components
+import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
+
 // import resList from "../utils/config";            //enable this to use hard coded restaurant list data in case of API faliure
 
 const Body = () => {
-  const [listOfRestaurants, setListOfRestaurants] = useState([]);
-  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
-
+  
+  const {listOfRestaurants=[], filteredRestaurant=[], setListOfRestaurants, setFilteredRestaurant} = useRestaurantList();
   const [searchText, setSearchText] = useState("");
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const data = await fetch(
-     SWIGGY_API
-    );
-
-    const json = await data.json();
-
-    const cardArray = json?.data?.cards || [];
-
-    let selectedRestaurants;
-
-    for (let i = 0; i <= 11; i++) {
-      selectedRestaurants =
-        cardArray[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-      if (selectedRestaurants) {
-        break; // Exit the loop if a valid array is found
-      }
-    }
-
-    setListOfRestaurants(selectedRestaurants || []);
-    setFilteredRestaurant(selectedRestaurants || []);
-  };
+  
 
   const onlineStatus = useOnlineStatus();
+
 
   if (onlineStatus === false)
     return (

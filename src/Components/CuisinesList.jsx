@@ -1,8 +1,17 @@
 import { useEffect, useState } from "react";
+
+
+// Constants
 import { MENU_FOOD_IMG } from "../../utils/constants";
 
+// Components
+import CuisinesCarousel from "./CuisinesCarousel";
+
+// Styles
+import "accordion/src/accordion.css";
+
 /* eslint-disable react/prop-types */
-const ResMenuList = ({ menulist, isVeg }) => {
+const CuisinesList = ({ menulist, isVeg }) => {
   const { title, itemCards, categories } = menulist;
   const [filteredItemCards, setFilteredItemCards] = useState(itemCards);
 
@@ -21,11 +30,11 @@ const ResMenuList = ({ menulist, isVeg }) => {
 
   return menulist?.["@type"] ===
     "type.googleapis.com/swiggy.presentation.food.v2.MenuCarousel" ? (
-    " "
+    <CuisinesCarousel title={menulist?.title} carousel={menulist?.carousel}/>
   ) : (
-    <div>
-      <h3>{title}</h3>
-      <div>
+    <div >
+      <h3 className="accordion">{title}</h3>
+      <div >
         {filteredItemCards &&
           filteredItemCards.map((items, index) => (
             <div key={index} className="food-content">
@@ -86,4 +95,4 @@ const ResMenuList = ({ menulist, isVeg }) => {
   );
 };
 
-export default ResMenuList;
+export default CuisinesList;
