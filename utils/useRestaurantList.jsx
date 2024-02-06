@@ -1,20 +1,16 @@
 import { useEffect, useState } from "react";
-import { SWIGGY_API, LAT, LNG, generateProxyUrl } from "./constants";
+import { SWIGGY_API, generateProxyUrl } from "./constants";
 
 const useRestaurantList = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
-  const lat = "26.1197";
-  const lng = "85.3910";
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const resource = generateProxyUrl(
-      SWIGGY_API.replace(LAT, lat).replace(LNG, lng)
-    );
+    const resource = generateProxyUrl(SWIGGY_API);
     const data = await fetch(resource);
 
     const json = await data.json();
@@ -27,7 +23,7 @@ const useRestaurantList = () => {
       selectedRestaurants =
         cardArray[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
       if (selectedRestaurants) {
-        break; // Exit the loop if a valid array is found
+        break; 
       }
     }
 

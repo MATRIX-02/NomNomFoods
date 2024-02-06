@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MENU_API, generateProxyUrl, LAT, LNG } from "./constants";
+import { MENU_API, generateProxyUrl } from "./constants";
 
 const useRestaurantMenu = (resId) => {
   const [resInfo, setResInfo] = useState(null);
@@ -8,16 +8,12 @@ const useRestaurantMenu = (resId) => {
   const [isPureVeg, setIsPureVeg] = useState(null);
 
 
-  const lat = "26.1197";
-  const lng = "85.3910";
-
-
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const resource = generateProxyUrl(MENU_API.replace(LAT, lat).replace(LNG, lng) + resId );
+    const resource = generateProxyUrl(MENU_API + resId );
     const data = await fetch(resource);
     const json = await data.json();
 

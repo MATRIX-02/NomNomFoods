@@ -6,7 +6,7 @@ import { MENU_FOOD_IMG } from "../../utils/constants";
 const CuisinesCarousel = ({ title, carousel }) => {
     
   return (
-    <div>
+    <div className="carousel-container">
       <h3>{title}</h3>
       <Carousel
         className="carousel"

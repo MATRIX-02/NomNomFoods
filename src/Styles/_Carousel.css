@@ -1,27 +1,8 @@
-.carousel  img{
-    height: auto;
-    width: 2rem;
-};
+.carousel .control-dots .dot{
+  width: 16px !important;
+  height: 3px !important;
+}
 
-.carousel .control-dots {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-  }
-  
-  /* Styling for individual indicator item */
-  .carousel .indicatorItem {
-    background-color: #ccc;
-    cursor: pointer;
-    width: 30px; /* Adjust width as needed */
-    height: 5px; /* Set height to create horizontal lines */
-    margin: 0 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Styling for selected indicator item */
-  .carousel .indicatorItem.selected {
-    background-color: #333;
-  }
+.carousel-container{
+  margin: 1rem 0;
+}

@@ -123,37 +123,5 @@ h4 > span{
     font-size: .7rem;
 }
 
-.menu-row3 {
-    margin: 3rem 0;
-}
 
-.menu-row3 h4{
-    font-weight: 300;
-    color: #535665;
-}
 
-.menu-row3 svg{
-    fill: #008000;
-}
-
-.menu-row3 hr{
-    border: none;
-    border-bottom: 1px solid #d3d3d3;
-    margin: 18px 0;
-}
-
-.show-veg{
-    border: 1px solid #e9e9eb;
-    border-radius: 6px;
-    box-shadow: rgb(249, 249, 249) 0px 1px 5px 0px;	
-    width: fit-content;
-    padding: .5rem;
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-    background: #fff;
-    color: #535665;
-}
-
-.show-veg:hover{
-    background: #c4f1b9;
-}

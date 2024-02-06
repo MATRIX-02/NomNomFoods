@@ -4,6 +4,7 @@ import CuisinesList from "./CuisinesList";
 import Toggle from "react-toggle";
 import "react-toggle/style.css";
 
+
 const Cuisines = ({ isPureVeg, menuInfo }) => {
   const [isVeg, setIsVeg] = useState(false);
 
@@ -37,9 +38,10 @@ const Cuisines = ({ isPureVeg, menuInfo }) => {
           />
         </label>
       )}
-      <hr />
-
-      {menuInfo.map((list, index) => (
+      
+      
+      {
+      menuInfo.map((list, index) => (
         <CuisinesList key={index} menulist={list?.card?.card} isVeg={isVeg} />
       ))}
     </div>
