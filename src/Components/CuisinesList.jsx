@@ -27,7 +27,6 @@ const CuisinesList = ({ menulist, isVeg }) => {
     toggleNestedAccordion,
   } = useAccordion();
 
-
   useEffect(() => {
     if (categories && categories.length > 0) {
       // If categories exist, filter item cards for each category and store in state
@@ -51,20 +50,24 @@ const CuisinesList = ({ menulist, isVeg }) => {
     }
   }, [categories, itemCards, isVeg, filteredItemCards]);
 
-
   return menulist?.["@type"] ===
     "type.googleapis.com/swiggy.presentation.food.v2.MenuCarousel" ? (
     <CuisinesCarousel title={menulist?.title} carousel={menulist?.carousel} />
   ) : (
     <div className="accordion-container">
-      <h3
-        className={`food-category accordion-title ${
+      <div
+        className={`flex justify-between food-category accordion-title ${
           accordionActive ? "active" : ""
         }`}
         onClick={toggleAccordion}
       >
-        {title}
-      </h3>
+        <h3>
+          {title} (
+          {(itemCards && itemCards.length) || (categories && categories.length)}
+          )
+        </h3>
+        <span>▼</span>
+      </div>
       <div className={`accordion-content ${accordionActive ? "active" : ""}`}>
         {filteredItemCards &&
           filteredItemCards.map((items, index) => (

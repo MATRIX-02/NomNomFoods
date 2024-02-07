@@ -1,4 +1,3 @@
-@import url("./Styles/_Header.css");
 @import url("./Styles/_Body.css");
 @import url("./Styles/_Cuisines.css");
 @import url("./Styles/_RestaurantCard.css");
@@ -6,6 +5,8 @@
 @import url("./Styles/_RestaurantMenu.css");
 @import url("./Styles/_Carousel.css");
 @import url("./Styles/_Accordion.css");
+
+
 
 *,
 *::after,
