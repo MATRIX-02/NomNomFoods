@@ -22,7 +22,7 @@ const Search = ({
   }, [searchSubmit]);
 
   return (
-    <div className="w-1/2 flex flex-col items-start">
+    <div className="w-5/6 flex flex-col items-start sm:w-1/2">
       <form className="w-full">
         <div className="flex items-center justify-center shadow-md">
           <input

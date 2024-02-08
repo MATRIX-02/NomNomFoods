@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className=" my-24 flex justify-center mx-32">
+      <div className=" my-24 flex justify-center">
         <Outlet />
       </div>
     </>

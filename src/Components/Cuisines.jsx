@@ -2,12 +2,12 @@
 import { useState } from "react";
 import CuisinesList from "./CuisinesList";
 import Toggle from "react-toggle";
+import CuisinesCarousel from "./CuisinesCarousel";
 import "react-toggle/style.css";
 
 
-const Cuisines = ({ isPureVeg, menuInfo }) => {
+const Cuisines = ({topPicks,  isPureVeg, menuInfo }) => {
   const [isVeg, setIsVeg] = useState(false);
-
   return (
     <div className="menu-row3">
       {isPureVeg ? (
@@ -39,10 +39,10 @@ const Cuisines = ({ isPureVeg, menuInfo }) => {
         </label>
       )}
       
-      
+      {topPicks && <CuisinesCarousel carousel={topPicks} />}
       {
       menuInfo.map((list, index) => (
-        <CuisinesList key={index} menulist={list?.card?.card} isVeg={isVeg} />
+        <CuisinesList key={index} menulist={list?.card?.card} isVeg={isVeg} topPicks={topPicks}/>
       ))}
     </div>
   );

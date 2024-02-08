@@ -7,7 +7,7 @@ const CuisinesCarousel = ({ title, carousel }) => {
     
   return (
     <div className="carousel-container">
-      <h3>{title}</h3>
+      <h3>Top Picks</h3>
       <Carousel
         className="carousel"
         autoFocus

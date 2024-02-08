@@ -6,13 +6,7 @@ const Offers = ({ time, costForTwoMessage, offerInfo }) => {
     <div className="menu-row2">
       <h4>
         <span>
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-          >
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
             <circle
               r="8.35"
               transform="matrix(-1 0 0 1 9 9)"
@@ -27,13 +21,7 @@ const Offers = ({ time, costForTwoMessage, offerInfo }) => {
           {time}
         </span>
         <span>
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-          >
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
             <circle
               cx="9"
               cy="9"

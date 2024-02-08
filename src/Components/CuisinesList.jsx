@@ -8,13 +8,12 @@ import {
 } from "../../utils/constants";
 
 // Components
-import CuisinesCarousel from "./CuisinesCarousel";
 import useAccordion from "../../utils/useAccordion";
 
 // Styles
 
 /* eslint-disable react/prop-types */
-const CuisinesList = ({ menulist, isVeg }) => {
+const CuisinesList = ({ menulist, isVeg, topPicks }) => {
   const { title, itemCards, categories } = menulist;
   const [filteredItemCards, setFilteredItemCards] = useState([]);
   const [filteredCategoryItemCards, setFilteredCategoryItemCards] = useState(
@@ -50,10 +49,11 @@ const CuisinesList = ({ menulist, isVeg }) => {
     }
   }, [categories, itemCards, isVeg, filteredItemCards]);
 
-  return menulist?.["@type"] ===
-    "type.googleapis.com/swiggy.presentation.food.v2.MenuCarousel" ? (
-    <CuisinesCarousel title={menulist?.title} carousel={menulist?.carousel} />
-  ) : (
+  
+
+  return(
+    <>
+    
     <div className="accordion-container">
       <div
         className={`flex justify-between food-category accordion-title ${
@@ -158,6 +158,7 @@ const CuisinesList = ({ menulist, isVeg }) => {
           })}
       </div>
     </div>
+    </>
   );
 };
 
