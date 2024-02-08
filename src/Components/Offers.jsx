@@ -3,10 +3,10 @@ import OfferCarousel from "./OfferCarousel";
 
 const Offers = ({ time, costForTwoMessage, offerInfo }) => {
   return (
-    <div className="menu-row2">
-      <h4>
-        <span>
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+    <div>
+      <h4 className="flex items-center text-sm text-[#3e4512]">
+        <span className="flex items-center mr-8">
+          <svg className=" mr-3" width="18" height="18" viewBox="0 0 18 18" fill="none">
             <circle
               r="8.35"
               transform="matrix(-1 0 0 1 9 9)"
@@ -20,8 +20,8 @@ const Offers = ({ time, costForTwoMessage, offerInfo }) => {
           </svg>
           {time}
         </span>
-        <span>
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <span className="flex items-center mr-8">
+          <svg className=" mr-3" width="18" height="18" viewBox="0 0 18 18" fill="none">
             <circle
               cx="9"
               cy="9"
@@ -37,7 +37,7 @@ const Offers = ({ time, costForTwoMessage, offerInfo }) => {
           {costForTwoMessage}
         </span>
       </h4>
-      <div className="offers-carausel">
+      <div className="flex overflow-x-auto overflow-y-hidden my-4 whitespace-nowrap">
         {offerInfo.map((offer) => (
           <OfferCarousel key={offer.info.offerIds} info={offer.info} />
         ))}

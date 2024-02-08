@@ -3,11 +3,11 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { MENU_FOOD_IMG } from "../../utils/constants";
 
-const CuisinesCarousel = ({ title, carousel }) => {
+const CuisinesCarousel = ({ carousel }) => {
     
   return (
-    <div className="carousel-container">
-      <h3>Top Picks</h3>
+    <div className="my-5">
+      <h3 className="font-semibold">Top Picks ({carousel.length})</h3>
       <Carousel
         className="carousel"
         autoFocus

@@ -18,7 +18,7 @@ const Header = () => {
         <ul className="flex justify-between list-none text-md font-bold capitalize whitespace-nowrap outline-none">
           <li>
             <Link
-              className="text-[#3d4152] hover:text-[#fc8019] no-underline flex p-4"
+              className="text-[#3d4152] transition-all duration-300 hover:text-[#fc8019] no-underline flex p-4"
               to="/NomNomFoods"
             >
               <span className="pt-1 pr-1 scale-100">
@@ -29,7 +29,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              className="text-[#3d4152] hover:text-[#fc8019] no-underline flex p-4"
+              className="text-[#3d4152] transition-all duration-300 hover:text-[#fc8019] no-underline flex p-4"
               to="/NomNomFoods/about"
             >
               <span>
@@ -40,7 +40,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              className="text-[#3d4152] hover:text-[#fc8019] no-underline flex p-4"
+              className="text-[#3d4152] transition-all duration-300 hover:text-[#fc8019] no-underline flex p-4"
               to="/NomNomFoods/contact"
             >
               <span>
@@ -51,7 +51,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              className="text-[#3d4152] hover:text-[#fc8019] no-underline flex p-4"
+              className="text-[#3d4152] transition-all duration-300 hover:text-[#fc8019] no-underline flex p-4"
               to="/NomNomFoods"
             >
               <span>

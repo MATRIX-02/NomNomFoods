@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import './index.css'
 import App from "./App.jsx";
 import Body from "./Components/Body.jsx";
 import About from "./Components/About.jsx";
 import Contact from "./Components/Contact.jsx";
 import RestaurantMenu from "./Components/RestaurantMenu.jsx";
+import Error from "./Components/Error.jsx"
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const appRouter = createBrowserRouter([
@@ -30,6 +30,7 @@ const appRouter = createBrowserRouter([
         element: <RestaurantMenu />,
       },
     ],
+    errorElement: <Error />
   },
 ]);
 

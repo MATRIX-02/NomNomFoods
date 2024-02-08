@@ -1,10 +1,9 @@
-@import url("./Styles/_Cuisines.css");
 @import url("./Styles/_Shimmer.css");
-@import url("./Styles/_RestaurantMenu.css");
-@import url("./Styles/_Carousel.css");
 @import url("./Styles/_Accordion.css");
 
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 *,
 *::after,
@@ -23,4 +22,13 @@ body {
 
 .app {
   margin: 6rem 1vw;
+}
+
+.carousel .control-dots .dot{
+  width: 16px !important;
+  height: 3px !important;
+}
+
+.origin-custom {
+  transform-origin: center 5px; /* Adjust the Y value (5px) as needed */
 }
