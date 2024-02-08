@@ -4,7 +4,6 @@ import SearchFilters from "./SearchFilters";
 
 const Search = ({
   listOfRestaurants,
-  setListOfRestaurants,
   setFilteredRestaurant,
   filteredRestaurant,
 }) => {
@@ -48,6 +47,7 @@ const Search = ({
       </form>
 
       <SearchFilters
+      searchSubmit= {searchSubmit}
         searchText= {searchText}
         listOfRestaurants={listOfRestaurants}
         filteredRestaurant={filteredRestaurant}

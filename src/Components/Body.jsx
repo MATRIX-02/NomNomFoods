@@ -15,10 +15,9 @@ const Body = () => {
   const {
     listOfRestaurants = [],
     filteredRestaurant = [],
-    setListOfRestaurants,
     setFilteredRestaurant,
   } = useRestaurantList();
-  const [searchText, setSearchText] = useState("");
+
 
   const onlineStatus = useOnlineStatus();
 
@@ -33,7 +32,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="flex flex-col items-center w-full">
-      <Search listOfRestaurants={listOfRestaurants} filteredRestaurant={filteredRestaurant} setListOfRestaurants={setListOfRestaurants} setFilteredRestaurant={setFilteredRestaurant}/>
+      <Search listOfRestaurants={listOfRestaurants} filteredRestaurant={filteredRestaurant} setFilteredRestaurant={setFilteredRestaurant}/>
       <hr className="my-8" />
       
       <div className="res-container">
