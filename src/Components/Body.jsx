@@ -35,7 +35,7 @@ const Body = () => {
       <Search listOfRestaurants={listOfRestaurants} filteredRestaurant={filteredRestaurant} setFilteredRestaurant={setFilteredRestaurant}/>
       <hr className="my-8" />
       
-      <div className="res-container">
+      <div className="w-11/12 flex justify-center flex-wrap m-auto">
         {filteredRestaurant.map((restaurant) => (
           <RestaurantCard key={restaurant.info.id} resList={restaurant} />
         ))}
