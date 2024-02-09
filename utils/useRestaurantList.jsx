@@ -4,6 +4,7 @@ import { SWIGGY_API, generateProxyUrl } from "./constants";
 const useRestaurantList = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  const [homeSuggestions, setHomeSuggestions] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -16,6 +17,8 @@ const useRestaurantList = () => {
     const json = await data.json();
 
     const cardArray = json?.data?.cards || [];
+
+    setHomeSuggestions(cardArray[0]?.card?.card?.imageGridCards?.info);
 
     let selectedRestaurants;
 
@@ -35,6 +38,7 @@ const useRestaurantList = () => {
     filteredRestaurant,
     setListOfRestaurants,
     setFilteredRestaurant,
+    homeSuggestions,
   };
 };
 

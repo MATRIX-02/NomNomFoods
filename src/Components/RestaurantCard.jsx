@@ -11,7 +11,7 @@ const RestaurantCard = (props) => {
     resList?.info || {};
 
   return (
-    <div className=" m-8 w-4/5 h-auto transition-all duration-300 ease overflow-hidden cursor-pointer hover:scale-110 lg:w-2/6 2xl:w-1/5 ">
+    <div className="m-8 w-4/5 h-auto transition-all duration-300 ease overflow-hidden cursor-pointer hover:scale-110 lg:w-2/6 2xl:w-1/5 ">
       <Link className="no-underline" to={"/NomNomFoods/restaurants/" + id}>
         <img
           className="rounded-2xl w-full overflow-hidden"
