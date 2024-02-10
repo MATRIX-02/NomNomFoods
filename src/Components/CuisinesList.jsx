@@ -1,28 +1,21 @@
 import { useEffect, useState } from "react";
 
 //Icons
-import { TiArrowSortedDown } from "react-icons/ti";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 // Components
 import CuisineStyles from "./CuisineStyles";
 
-// Components
-import useAccordion from "../../utils/useAccordion";
-
-const CuisinesList = ({ menulist, isVeg }) => {
+const CuisinesList = ({showItems, setShowItems,categoryToggles, toggleCategory, menulist, isVeg }) => {
   const { title, itemCards, categories } = menulist;
   const [filteredItemCards, setFilteredItemCards] = useState([]);
   const [filteredCategoryItemCards, setFilteredCategoryItemCards] = useState(
     []
   );
 
-  const {
-    accordionActive,
-    toggleAccordion,
-    nestedAccordionActive,
-    toggleNestedAccordion,
-  } = useAccordion();
+  const showItemHandler = () => {
+    setShowItems();
+  };
 
   useEffect(() => {
     if (categories && categories.length > 0) {
@@ -34,6 +27,7 @@ const CuisinesList = ({ menulist, isVeg }) => {
           : category.itemCards;
       });
       setFilteredCategoryItemCards(newFilteredCategoryItemCards);
+      // setCategoryToggles(new Array(categories.length).fill(false));
     } else {
       if (isVeg && Array.isArray(itemCards)) {
         const filteredItem = itemCards.filter(
@@ -46,14 +40,13 @@ const CuisinesList = ({ menulist, isVeg }) => {
     }
   }, [isVeg]);
 
+
   return (
     <>
-      <div className="accordion-container">
+      <div className="mb-5">
         <div
-          className={`flex justify-between border-b-[1px] border-[#d3d3d3] accordion-title ${
-            accordionActive ? "active" : ""
-          }`}
-          onClick={toggleAccordion}
+          className="flex justify-between border-b-[1px] border-[#d3d3d3] p-3 cursor-pointer"
+          onClick={showItemHandler}
         >
           <h3 className="font-semibold">
             {title} (
@@ -63,39 +56,43 @@ const CuisinesList = ({ menulist, isVeg }) => {
           </h3>
           <span
             className={`flex items-center scale-150 transition-transform transform ${
-              accordionActive ? "rotate-180 origin-middle" : ""
+              showItems ? "rotate-180 origin-middle" : ""
             }`}
           >
             <MdOutlineKeyboardArrowDown />
           </span>
         </div>
-        <div className={`accordion-content ${accordionActive ? "active" : ""}`}>
-          {filteredItemCards &&
+        <div className="p-3">
+          {showItems &&
+            filteredItemCards &&
             filteredItemCards.map((items, index) => (
               <CuisineStyles key={index} items={items} />
             ))}
 
-          {categories &&
+          {showItems &&
+            categories &&
             categories.map((category, index) => {
               return (
                 <div key={index}>
-                  <h4
-                    className={`font-sm font-medium accordion-title ${
-                      nestedAccordionActive[index] ? "active" : ""
-                    }`}
-                    onClick={() => toggleNestedAccordion(index)}
-                  >
-                    {category.title} (
-                    {filteredCategoryItemCards[index] &&
-                      filteredCategoryItemCards[index].length}
-                    )
-                  </h4>
-                  <div
-                    className={`accordion-content ${
-                      nestedAccordionActive[index] ? "active" : ""
-                    }`}
-                  >
-                    {filteredCategoryItemCards[index] &&
+                  <div className="flex justify-between  cursor-pointer" onClick={() => toggleCategory(index)}>
+                    <h4 className="font-sm font-medium m-3">
+                      {category.title} (
+                      {filteredCategoryItemCards[index] &&
+                        filteredCategoryItemCards[index].length}
+                      )
+                    </h4>
+                    <span
+                      className={`flex w-fit items-center scale-150 transition-transform transform ${
+                        categoryToggles[index] ? "rotate-180 origin-middle" : ""
+                      }`}
+                    >
+                      <MdOutlineKeyboardArrowDown className=" opacity-50" />
+                    </span>
+                  </div>
+
+                  <div>
+                    {categoryToggles[index] &&
+                      filteredCategoryItemCards[index] &&
                       filteredCategoryItemCards[index].map((items, index) => (
                         <CuisineStyles key={index} items={items} />
                       ))}
