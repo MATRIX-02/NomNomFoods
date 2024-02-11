@@ -18,15 +18,11 @@ const Cuisines = ({ topPicks, isPureVeg, menuInfo }) => {
   // };
   
   const toggleCategory = (index) => {
-    // Close all categories
     const newToggles = categoryToggles.map(() => false);
-    
-    // Toggle the clicked category if it's not already open, else close all categories
     if (!categoryToggles[index]) {
       newToggles[index] = true;
     }
     
-    // Update state
     setCategoryToggles(newToggles);
   };
   

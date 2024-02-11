@@ -28,6 +28,7 @@ const RestaurantMenu = () => {
     sla,
     costForTwoMessage,
   } = restaurantInfo || {};
+  
 
   return restaurantInfo === null ? (
     <Shimmer />
