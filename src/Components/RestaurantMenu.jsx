@@ -29,10 +29,9 @@ const RestaurantMenu = () => {
     costForTwoMessage,
   } = restaurantInfo || {};
   
+ 
 
-  return restaurantInfo === null ? (
-    <Shimmer />
-  ) : (
+  return (restaurantInfo !== null  &&
     <div className="w-full m-auto px-8 pt-20 2xl:w-1/2 sm:w-5/6" >
       <div className="flex justify-between">
         <div>
