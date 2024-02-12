@@ -5,7 +5,12 @@ import { AiOutlineQuestion } from "react-icons/ai";
 import { MdOutlineContactSupport } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
 
+import {  useSelector } from "react-redux";
+
 const Header = () => {
+
+  const cartItems = useSelector((store)=> store.cart.items);
+
   return (
     <div className="h-20 flex justify-between items-center px-32 fixed inset-0 bg-white z-50 shadow-md">
       <img
@@ -52,12 +57,12 @@ const Header = () => {
           <li>
             <Link
               className="text-[#3d4152] transition-all duration-300 hover:text-[#fc8019] no-underline flex p-4"
-              to="/NomNomFoods"
+              to="/NomNomFoods/cart"
             >
               <span>
                 <FiShoppingCart className="pt-1 pr-1 scale-150"/>
               </span>
-              <span>Cart</span>
+              <span>Cart ({cartItems.length})</span>
             </Link>
           </li>
         </ul>

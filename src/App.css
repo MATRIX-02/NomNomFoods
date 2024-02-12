@@ -26,6 +26,7 @@ body {
 .carousel .control-dots .dot{
   width: 16px !important;
   height: 3px !important;
+  border-radius: 0 !important;
 }
 
 .origin-custom {

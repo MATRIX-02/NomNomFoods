@@ -1,10 +1,19 @@
+import { useDispatch } from "react-redux";
 import {
   VEG_SYMBOL,
   NON_VEG_SYMBOL,
   MENU_FOOD_IMG,
 } from "../../utils/constants";
+import { addItem } from "../../utils/slices/cartSlice";
 
 const CuisineStyles = ({ items }) => {
+  const dispatch = useDispatch();
+
+  const handleAddItem = (items) => {
+    // Dispatch an action
+    dispatch(addItem(items));
+  };
+
   return (
     <div className="flex items-center justify-between my-8 pb-3 border-b-[1px] border-dashed border-[#c4c4c4]">
       <div className="w-[82%]">
@@ -30,7 +39,10 @@ const CuisineStyles = ({ items }) => {
       </div>
       {items?.card?.info?.imageId ? (
         <div className="relative border-none cursor-pointer bg-[#f0f0f0] min-w-32 max-w-32 h-24 rounded-md p-0">
-          <div className="flex justify-center items-center absolute -bottom-3 left-0 right-0 m-auto px-6 w-10/12 h-2/5 bg-white rounded shadow-lg border-slate-300 border-[1px] text-[#60b246] font-semibold text-[0.75rem]">
+          <div
+            className="flex justify-center items-center absolute -bottom-3 left-0 right-0 m-auto px-6 w-10/12 h-2/5 bg-white rounded shadow-lg border-slate-300 border-[1px] text-[#60b246] font-semibold text-[0.75rem]"
+            onClick={() => handleAddItem(items)}
+          >
             ADD
           </div>
           <img
@@ -41,7 +53,10 @@ const CuisineStyles = ({ items }) => {
         </div>
       ) : (
         <div className="relative border-none cursor-pointer  min-w-32 max-w-32 h-24 rounded-md p-0">
-          <div className="flex justify-center items-center absolute top-1/3 left-0 right-0 m-auto px-6 w-10/12 h-2/5 bg-white rounded shadow-lg border-slate-300 border-[1px] text-[#60b246] font-semibold text-[0.75rem]">
+          <div
+            className="flex justify-center items-center absolute top-1/3 left-0 right-0 m-auto px-6 w-10/12 h-2/5 bg-white rounded shadow-lg border-slate-300 border-[1px] text-[#60b246] font-semibold text-[0.75rem]"
+            onClick={() => handleAddItem(items)}
+          >
             ADD
           </div>
         </div>
