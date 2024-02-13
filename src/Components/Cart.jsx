@@ -29,7 +29,7 @@ const Cart = () => {
     dispatch(clearCart());
   };
 
-  console.log(cartItems)
+
 
   return cartItems.length === 0 ? (
     <div className="absolute top-0 w-full h-full flex flex-col justify-center items-center">
