@@ -1,0 +1,1 @@
+import{j as e}from"./index-pCdY7JZ4.js";const l=()=>e.jsxs("div",{className:"bg-[#37718E] absolute top-0 left-0 w-full h-full p-32 ",children:[e.jsx("h1",{children:"Help"}),e.jsx("h2",{children:"This is Namaste React Web Series"})]});export{l as default};
