@@ -24,7 +24,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/NomNomFoods/about",
-        element: <Suspense  fallback={<Shimmer />}><About /></Suspense> ,
+        element: <About /> ,
       },
       {
         path: "/NomNomFoods/contact",
@@ -32,7 +32,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/NomNomFoods/restaurants/:resId",
-        element: <Suspense fallback={<Shimmer />}> <RestaurantMenu /></Suspense>,
+        element:  <RestaurantMenu />,
       },
       {
         path: "/NomNomFoods/cart",
