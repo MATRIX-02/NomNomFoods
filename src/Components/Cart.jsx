@@ -36,7 +36,7 @@ const Cart = () => {
     <div className="absolute top-0 w-full h-full flex flex-col justify-center items-center">
       <img
         className=" w-72"
-        src="src/assets/Empty_cart.avif"
+        src="./Images/Empty_cart.avif"
         alt="Empty Cart"
       />
       <h1 className="mt-5 mb-2 font-extrabold text-lg text-[#535665]">
