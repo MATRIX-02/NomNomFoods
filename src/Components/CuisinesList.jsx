@@ -6,7 +6,7 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 // Components
 import CuisineStyles from "./CuisineStyles";
 
-const CuisinesList = ({showItems, setShowItems,categoryToggles, toggleCategory, menulist, isVeg }) => {
+const CuisinesList = ({showItems, setShowItems,categoryToggles, toggleCategory, menulist, isVeg, restaurantInfo }) => {
   const { title, itemCards, categories } = menulist;
   const [filteredItemCards, setFilteredItemCards] = useState([]);
   const [filteredCategoryItemCards, setFilteredCategoryItemCards] = useState(
@@ -66,7 +66,7 @@ const CuisinesList = ({showItems, setShowItems,categoryToggles, toggleCategory, 
           {showItems &&
             filteredItemCards &&
             filteredItemCards.map((items, index) => (
-              <CuisineStyles key={index} items={items} />
+              <CuisineStyles key={index} items={items} restaurantInfo={restaurantInfo}/>
             ))}
 
           {showItems &&
@@ -94,7 +94,7 @@ const CuisinesList = ({showItems, setShowItems,categoryToggles, toggleCategory, 
                     {categoryToggles[index] &&
                       filteredCategoryItemCards[index] &&
                       filteredCategoryItemCards[index].map((items, index) => (
-                        <CuisineStyles key={index} items={items} />
+                        <CuisineStyles key={index} items={items} restaurantInfo={restaurantInfo}/>
                       ))}
                     <hr />
                   </div>

@@ -5,7 +5,7 @@ import Toggle from "react-toggle";
 import CuisinesCarousel from "./CuisinesCarousel";
 import "react-toggle/style.css";
 
-const Cuisines = ({ topPicks, isPureVeg, menuInfo }) => {
+const Cuisines = ({ topPicks, isPureVeg, menuInfo, restaurantInfo }) => {
   const [isVeg, setIsVeg] = useState(false);
   const [showItems, setShowItems] = useState(null);
   const [categoryToggles, setCategoryToggles] = useState([]);
@@ -81,6 +81,7 @@ const Cuisines = ({ topPicks, isPureVeg, menuInfo }) => {
           menulist={list?.card?.card}
           isVeg={isVeg}
           topPicks={topPicks}
+          restaurantInfo={restaurantInfo}
         />
       ))}
     </div>

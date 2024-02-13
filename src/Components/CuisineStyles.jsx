@@ -1,18 +1,37 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   VEG_SYMBOL,
   NON_VEG_SYMBOL,
   MENU_FOOD_IMG,
 } from "../../utils/constants";
-import { addItem } from "../../utils/slices/cartSlice";
+import {
+  addItem,
+  removeItem,
+  setRestaurant,
+} from "../../utils/slices/cartSlice";
 
-const CuisineStyles = ({ items }) => {
+const CuisineStyles = ({ items, restaurantInfo }) => {
+  const selectedItems = useSelector((store) => store.cart.items);
+  const restaurant = useSelector((store) => store.cart.restaurant);
+
+ 
   const dispatch = useDispatch();
 
-  const handleAddItem = (items) => {
-    // Dispatch an action
-    dispatch(addItem(items));
+  const handlerAddItem = (item) => {
+    if (restaurant === undefined) {
+      dispatch(setRestaurant(restaurantInfo));
+    } else if (restaurant?.id !== restaurantInfo?.id) {
+      dispatch(setRestaurant(restaurantInfo));
+    }
+    dispatch(addItem(item));
   };
+  const handlerRemoveItem = (item) => {
+    dispatch(removeItem(item));
+  };
+
+  const itemsInCart = selectedItems.filter(
+    (selectedItem) => selectedItem?.card?.info?.id === items?.card?.info?.id
+  );
 
   return (
     <div className="flex items-center justify-between my-8 pb-3 border-b-[1px] border-dashed border-[#c4c4c4]">
@@ -39,12 +58,22 @@ const CuisineStyles = ({ items }) => {
       </div>
       {items?.card?.info?.imageId ? (
         <div className="relative border-none cursor-pointer bg-[#f0f0f0] min-w-32 max-w-32 h-24 rounded-md p-0">
-          <div
-            className="flex justify-center items-center absolute -bottom-3 left-0 right-0 m-auto px-6 w-10/12 h-2/5 bg-white rounded shadow-lg border-slate-300 border-[1px] text-[#60b246] font-semibold text-[0.75rem]"
-            onClick={() => handleAddItem(items)}
-          >
-            ADD
-          </div>
+          {itemsInCart.length > 0 ? (
+            <>
+              <div className="flex justify-around items-center absolute -bottom-3 left-0 right-0 m-auto px-6 w-10/12 h-2/5 bg-white rounded shadow-lg border-slate-300 border-[1px] text-[#60b246] font-semibold text-[0.75rem]">
+                <div className="p-2 mx-2 text-lg cursor-pointer" onClick={()=>handlerRemoveItem(items)}>-</div>
+                <div className="p-2 mx-2">{itemsInCart[0]?.quantity}</div>
+                <div className="p-2 mx-2 text-lg cursor-pointer" onClick={()=>handlerAddItem(items)}>+</div>
+              </div>
+            </>
+          ) : (
+            <div
+              className="flex justify-center items-center absolute -bottom-3 left-0 right-0 m-auto px-6 w-10/12 h-2/5 bg-white rounded shadow-lg border-slate-300 border-[1px] text-[#60b246] font-semibold text-[0.75rem]"
+              onClick={() => handlerAddItem(items)}
+            >
+              ADD
+            </div>
+          )}
           <img
             className="w-full h-full bg-cover rounded-md bg-blend-multiply"
             src={MENU_FOOD_IMG + items?.card?.info?.imageId}
@@ -55,7 +84,7 @@ const CuisineStyles = ({ items }) => {
         <div className="relative border-none cursor-pointer  min-w-32 max-w-32 h-24 rounded-md p-0">
           <div
             className="flex justify-center items-center absolute top-1/3 left-0 right-0 m-auto px-6 w-10/12 h-2/5 bg-white rounded shadow-lg border-slate-300 border-[1px] text-[#60b246] font-semibold text-[0.75rem]"
-            onClick={() => handleAddItem(items)}
+            onClick={() => handlerAddItem(items)}
           >
             ADD
           </div>

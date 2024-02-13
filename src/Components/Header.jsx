@@ -1,11 +1,12 @@
 import { LOGO_URL } from "../../utils/constants";
 import { Link } from "react-router-dom";
-import { IoHomeOutline } from "react-icons/io5";
-import { AiOutlineQuestion } from "react-icons/ai";
-import { MdOutlineContactSupport } from "react-icons/md";
+import { IoIosSearch } from "react-icons/io";
+import { IoHelpBuoyOutline } from "react-icons/io5";
+import { FiUser } from "react-icons/fi";
 import { FiShoppingCart } from "react-icons/fi";
 
 import {  useSelector } from "react-redux";
+
 
 const Header = () => {
 
@@ -21,15 +22,15 @@ const Header = () => {
 
       <div className="flex items-center">
         <ul className="flex justify-between list-none text-md font-bold capitalize whitespace-nowrap outline-none">
-          <li>
+          <li className="">
             <Link
-              className="text-[#3d4152] transition-all duration-300 hover:text-[#fc8019] no-underline flex p-4"
+              className="text-[#3d4152] hover:text-[#fc8019] transition-all duration-300 no-underline flex p-4"
               to="/NomNomFoods"
             >
-              <span className="pt-1 pr-1 scale-100">
-                <IoHomeOutline />
+              <span className="pt-1 pr-1 scale-150">
+              <IoIosSearch />
               </span>
-              <span>Home</span>
+              <span>Search</span>
             </Link>
           </li>
           <li>
@@ -38,9 +39,9 @@ const Header = () => {
               to="/NomNomFoods/about"
             >
               <span>
-                <AiOutlineQuestion className="pt-1 pr-1 scale-150" />
+                <IoHelpBuoyOutline className="pt-1 pr-1 scale-150" />
               </span>
-              <span>About Us</span>
+              <span>Help</span>
             </Link>
           </li>
           <li>
@@ -49,9 +50,9 @@ const Header = () => {
               to="/NomNomFoods/contact"
             >
               <span>
-                <MdOutlineContactSupport className="pt-1 pr-1 scale-150" />
+                <FiUser className="pt-1 pr-1 scale-150" />
               </span>
-              <span>Contact Us</span>
+              <span>User</span>
             </Link>
           </li>
           <li>

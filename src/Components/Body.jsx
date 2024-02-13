@@ -36,7 +36,7 @@ const Body = () => {
     <div className="flex flex-col items-center w-full">
       
       <div className="w-10/12 h-64">
-        <h2 className="text-2xl font-bold">Mayank, what's on your mind?</h2>
+        <h2 className="text-2xl font-bold">Hello, what's on your mind?</h2>
         <div className="flex overflow-x-auto overflow-y-hidden">
           {homeSuggestions.map((items)=>(
             <div key={items.id}>

@@ -29,10 +29,11 @@ const RestaurantMenu = () => {
     costForTwoMessage,
   } = restaurantInfo || {};
   
- 
 
-  return (restaurantInfo !== null  &&
-    <div className="w-full m-auto px-8 pt-20 2xl:w-1/2 sm:w-5/6" >
+  return restaurantInfo === null ? (
+    <Shimmer />
+  ) : (
+    <div className="w-full m-auto px-8 pt-20 2xl:w-1/2 sm:w-5/6">
       <div className="flex justify-between">
         <div>
           <h1 className="text-lg text-[#282c3f]">{name}</h1>
@@ -52,8 +53,10 @@ const RestaurantMenu = () => {
             </svg>
             <p className="text-base pt-1">{avgRating}</p>
           </div>
-          <hr className="w-5/6 border-[#e9e9eb]"/>
-          <p className="px-1 py-1 text-xs whitespace-nowrap">{totalRatingsString}</p>
+          <hr className="w-5/6 border-[#e9e9eb]" />
+          <p className="px-1 py-1 text-xs whitespace-nowrap">
+            {totalRatingsString}
+          </p>
         </div>
       </div>
       <hr className="border border-dashed border-[#d3d3d3] my-5 " />
@@ -62,7 +65,7 @@ const RestaurantMenu = () => {
         costForTwoMessage={costForTwoMessage}
         offerInfo={offerInfo}
       />
-      <Cuisines isPureVeg={isPureVeg} menuInfo={menuInfo} topPicks={topPicks} />
+      <Cuisines restaurantInfo={restaurantInfo} isPureVeg={isPureVeg} menuInfo={menuInfo} topPicks={topPicks} />
     </div>
   );
 };
