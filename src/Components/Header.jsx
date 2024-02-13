@@ -14,7 +14,7 @@ const Header = () => {
     <div className="h-20 flex justify-between items-center px-32 fixed inset-0 bg-white z-50 shadow-md">
       <Link to="/NomNomFoods">
         <img
-          className="w-20 h-auto"
+          className="w-20 h-auto fixed top-0"
           src="./Images/Logo.png"
           alt="NomNomFoods"
         />
