@@ -5,21 +5,20 @@ import { IoHelpBuoyOutline } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 import { FiShoppingCart } from "react-icons/fi";
 
-import {  useSelector } from "react-redux";
-
+import { useSelector } from "react-redux";
 
 const Header = () => {
-
-  const cartItems = useSelector((store)=> store.cart.items);
+  const cartItems = useSelector((store) => store.cart.items);
 
   return (
     <div className="h-20 flex justify-between items-center px-32 fixed inset-0 bg-white z-50 shadow-md">
-      <img
-        className="w-24 mix-blend-multiply"
-        src={LOGO_URL}
-        alt="NomNomFoods"
-      />
-
+      <Link to="/NomNomFoods">
+        <img
+          className="w-auto h-full mix-blend-multiply"
+          src="./Images/Logo.png"
+          alt="NomNomFoods"
+        />
+      </Link>
       <div className="flex items-center">
         <ul className="flex justify-between list-none text-md font-bold capitalize whitespace-nowrap outline-none">
           <li className="">
@@ -28,7 +27,7 @@ const Header = () => {
               to="/NomNomFoods"
             >
               <span className="pt-1 pr-1 scale-150">
-              <IoIosSearch />
+                <IoIosSearch />
               </span>
               <span>Search</span>
             </Link>
@@ -36,7 +35,7 @@ const Header = () => {
           <li>
             <Link
               className="text-[#3d4152] transition-all duration-300 hover:text-[#fc8019] no-underline flex p-4"
-              to="/NomNomFoods/about"
+              to="/NomNomFoods/help"
             >
               <span>
                 <IoHelpBuoyOutline className="pt-1 pr-1 scale-150" />
@@ -61,7 +60,7 @@ const Header = () => {
               to="/NomNomFoods/cart"
             >
               <span>
-                <FiShoppingCart className="pt-1 pr-1 scale-150"/>
+                <FiShoppingCart className="pt-1 pr-1 scale-150" />
               </span>
               <span>Cart ({cartItems.length})</span>
             </Link>

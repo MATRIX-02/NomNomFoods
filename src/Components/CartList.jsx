@@ -27,10 +27,10 @@ const CartList = ({ items, length }) => {
         )}
       </div>
       <div className="w-2/3 text-sm mx-2">{name}</div>
-      <div className="mx-1 my-auto flex justify-center items-center w-24 h-10 bg-white shadow-lg border-slate-300 border-[1px] text-[#60b246] font-semibold text-[0.75rem]">
-        <div className="p-2 mx-2 text-lg cursor-pointer" onClick={()=>handlerRemoveItem(items)}>-</div>
-        <div className="p-2 mx-2">{length}</div>
-        <div className="p-2 mx-2 text-lg  cursor-pointer" onClick={()=>handlerAddItem(items)}>+</div>
+      <div className="relative mx-1 my-auto flex justify-center items-center w-20 h-10 bg-white shadow-lg border-slate-300 border-[1px] text-[#60b246] font-semibold text-[0.75rem]">
+        <div className="p-2 mx-3 text-lg cursor-pointer" onClick={()=>handlerRemoveItem(items)}>-</div>
+        <div className="absolute p-2 mx-1">{length}</div>
+        <div className="p-2 mx-3 text-lg  cursor-pointer" onClick={()=>handlerAddItem(items)}>+</div>
       </div>
       <div className="text-sm my-auto">
         <span>&#8377;</span>

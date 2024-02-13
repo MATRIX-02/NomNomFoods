@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import CuisineStyles from "./CuisineStyles";
 import { clearCart } from "../../utils/slices/cartSlice";
-import { useNavigate } from "react-router-dom";
 import { CDN_URL } from "../../utils/constants";
 import CartList from "./CartList";
 import { useState, useEffect } from "react";
@@ -18,7 +17,7 @@ const Cart = () => {
   useEffect(() => {
     const calculateTotalPrice = () => {
       const totalPrice = cartItems.reduce((acc, item) => {
-        return acc + (item.card.info.price / 100) * item.quantity;
+        return acc + (item?.card?.info?.price / 100 || item?.card?.info?.defaultPrice /100) * item.quantity;
       }, 0);
       setTotalPrice(totalPrice);
     };

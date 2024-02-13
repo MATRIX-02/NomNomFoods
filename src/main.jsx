@@ -7,10 +7,9 @@ import Contact from "./Components/Contact.jsx";
 // import RestaurantMenu from "./Components/RestaurantMenu.jsx";
 import Error from "./Components/Error.jsx"
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Shimmer from "./Components/Shimmer.jsx";
 import Cart from "./Components/Cart.jsx";
 
-const About = lazy(()=> import("./Components/About.jsx"));
+const About = lazy(()=> import("./Components/Help.jsx"));
 const RestaurantMenu = lazy(()=> import("./Components/RestaurantMenu.jsx"));
 
 const appRouter = createBrowserRouter([
@@ -23,7 +22,7 @@ const appRouter = createBrowserRouter([
         element: <Body />,
       },
       {
-        path: "/NomNomFoods/about",
+        path: "/NomNomFoods/help",
         element: <Suspense><About /></Suspense> ,
       },
       {
