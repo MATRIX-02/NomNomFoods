@@ -3,14 +3,16 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import Body from "./Components/Body.jsx";
 // import About from "./Components/About.jsx";
-import Contact from "./Components/Contact.jsx";
+// import Contact from "./Components/Contact.jsx";
 // import RestaurantMenu from "./Components/RestaurantMenu.jsx";
 import Error from "./Components/Error.jsx"
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Cart from "./Components/Cart.jsx";
+// import Cart from "./Components/Cart.jsx";
 
-const About = lazy(()=> import("./Components/Help.jsx"));
+const About = lazy(()=> import("./Components/About.jsx"));
 const RestaurantMenu = lazy(()=> import("./Components/RestaurantMenu.jsx"));
+const Contact = lazy(()=> import("./Components/Contact.jsx"));
+const Cart = lazy(()=>import("./Components/Cart.jsx"))
 
 const appRouter = createBrowserRouter([
   {
@@ -22,12 +24,12 @@ const appRouter = createBrowserRouter([
         element: <Body />,
       },
       {
-        path: "/NomNomFoods/help",
+        path: "/NomNomFoods/about",
         element: <Suspense><About /></Suspense> ,
       },
       {
         path: "/NomNomFoods/contact",
-        element: <Contact />,
+        element: <Suspense><Contact /></Suspense>,
       },
       {
         path: "/NomNomFoods/restaurants/:resId",
@@ -35,7 +37,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/NomNomFoods/cart",
-        element: <Cart />,
+        element: <Suspense><Cart /></Suspense>,
       },
     ],
     errorElement: <Error />

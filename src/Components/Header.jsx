@@ -35,12 +35,12 @@ const Header = () => {
           <li>
             <Link
               className="text-[#3d4152] transition-all duration-300 hover:text-[#fc8019] no-underline flex p-4"
-              to="/NomNomFoods/help"
+              to="/NomNomFoods/about"
             >
               <span>
                 <IoHelpBuoyOutline className="pt-1 pr-1 scale-150" />
               </span>
-              <span>Help</span>
+              <span>About Us</span>
             </Link>
           </li>
           <li>
