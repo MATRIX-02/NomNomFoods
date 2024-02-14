@@ -1,19 +1,24 @@
+import useRestaurantList from "../../utils/useRestaurantList";
+
 const Shimmer = () => {
+  const { homeSuggestions } = useRestaurantList();
   return (
     <div className="shimmer-container">
-      <div className="w-full h-64 flex items-center overflow-x-auto overflow-y-hidden">
-        <div className="h-48 rounded-none cursor-pointer  w-40 mx-2 shimmer-img bg-[#F6F6F6]"></div>
-        <div className="h-48 rounded-none cursor-pointer  w-40 mx-2 shimmer-img bg-[#F6F6F6]"></div>
-        <div className="h-48 rounded-none cursor-pointer  w-40 mx-2 shimmer-img bg-[#F6F6F6]"></div>
-        <div className="h-48 rounded-none cursor-pointer  w-40 mx-2 shimmer-img bg-[#F6F6F6]"></div>
-        <div className="h-48 rounded-none cursor-pointer  w-40 mx-2 shimmer-img bg-[#F6F6F6]"></div>
-        <div className="h-48 rounded-none cursor-pointer  w-40 mx-2 shimmer-img bg-[#F6F6F6]"></div>
-        <div className="h-48 rounded-none cursor-pointer  w-40 mx-2 shimmer-img bg-[#F6F6F6]"></div>
-        <div className="h-48 rounded-none cursor-pointer  w-40 mx-2 shimmer-img bg-[#F6F6F6]"></div>
-        <div className="h-48 rounded-none cursor-pointer  w-40 mx-2 shimmer-img bg-[#F6F6F6]"></div>
-        <div className="h-48 rounded-none cursor-pointer  w-40 mx-2 shimmer-img bg-[#F6F6F6]"></div>
-        <div className="h-48 rounded-none cursor-pointer  w-40 mx-2 shimmer-img bg-[#F6F6F6]"></div>
-      </div>
+      {homeSuggestions && (
+        <div className="flex flex-nowrap overflow-x-auto overflow-y-hidden">
+          <div className="h-48 rounded-none cursor-pointer w-40 mx-2  bg-[#F6F6F6]"></div>
+          <div className="h-48 rounded-none cursor-pointer w-40 mx-2  bg-[#F6F6F6]"></div>
+          <div className="h-48 rounded-none cursor-pointer w-40 mx-2  bg-[#F6F6F6]"></div>
+          <div className="h-48 rounded-none cursor-pointer w-40 mx-2  bg-[#F6F6F6]"></div>
+          <div className="h-48 rounded-none cursor-pointer w-40 mx-2  bg-[#F6F6F6]"></div>
+          <div className="h-48 rounded-none cursor-pointer w-40 mx-2  bg-[#F6F6F6]"></div>
+          <div className="h-48 rounded-none cursor-pointer w-40 mx-2  bg-[#F6F6F6]"></div>
+          <div className="h-48 rounded-none cursor-pointer w-40 mx-2  bg-[#F6F6F6]"></div>
+          <div className="h-48 rounded-none cursor-pointer w-40 mx-2  bg-[#F6F6F6]"></div>
+          <div className="h-48 rounded-none cursor-pointer w-40 mx-2  bg-[#F6F6F6]"></div>
+          <div className="h-48 rounded-none cursor-pointer w-40 mx-2  bg-[#F6F6F6]"></div>
+        </div>
+      )}
       <hr className="my-8 border-1 border-slate-200 w-full" />
       <div className="shimmer-card">
         <div className=" shimmer-img "></div>

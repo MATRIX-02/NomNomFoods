@@ -17,6 +17,7 @@ const useRestaurantList = () => {
     const json = await data.json();
 
     const cardArray = json?.data?.cards || [];
+    
 
     setHomeSuggestions(cardArray[0]?.card?.card?.imageGridCards?.info);
 
