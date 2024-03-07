@@ -4,18 +4,18 @@
 NomNomFoods is an innovative platform utilizing the Swiggy API, offering a user-friendly interface for browsing and ordering food from a diverse range of restaurants. With its dynamic features, users can effortlessly explore culinary options and make orders with ease.
 
 ## Utilized Techonologies
--React: Dynamic user interface
--Redux: Smooth state management
--Vanilla CSS: Visually appealing and adaptive design
--Custom Hooks: Enhancing resusability and maintaining clean, modular code
--React Router Dom: Smooth routing and navigation
+- **React**: Dynamic user interface
+- **Redux**: Smooth state management
+- **Tailwind CSS**: Visually appealing and adaptive design
+- **Custom Hooks**: Enhancing resusability and maintaining clean, modular code
+- **React Router Dom**: Smooth routing and navigation
 
 ## Ready to Explore?
 ### Prerequisites
 Ensure the following are installed on your machine:
 
--Node.js installed
--npm package manager
+- Node.js installed
+- npm package manager
 
 ### Installation
 
