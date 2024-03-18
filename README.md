@@ -10,6 +10,9 @@ NomNomFoods is an innovative platform utilizing the Swiggy API, offering a user-
 - **Custom Hooks**: Enhancing resusability and maintaining clean, modular code
 - **React Router Dom**: Smooth routing and navigation
 
+## Disclaimer
+Currently the swiggy API is causing CORS error due to which fetching API gives error. To fetch the website you have to explicity install **Allow CORS: Access-Control-Allow-Origin** extension. Thank you❤️.
+
 ## Ready to Explore?
 ### Prerequisites
 Ensure the following are installed on your machine:
