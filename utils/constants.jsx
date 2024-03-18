@@ -2,8 +2,7 @@ export const LAT = "28.6166063";
 
 export const LNG = "77.1300404";
 
-// export const PROXY_CORS = "https://thingproxy.freeboard.io/fetch/";
-export const PROXY_CORS = "";
+export const PROXY_CORS = "https://thingproxy.freeboard.io/fetch/";
 
 export const generateProxyUrl = (URL) => PROXY_CORS + encodeURIComponent(URL)
 
