@@ -25,7 +25,7 @@ Ensure the following are installed on your machine:
 1. Clone the repository.
 2. Navigate to the project directory.
 3. Run `npm install` to install dependencies.
-4. Run `npm start` to start the development server.
+4. Run `npm run dev` to start the development server.
 
 ## Your Feedback matters!
 I welcome any feedback or suggestions you may have regarding NomNomFoods. Your input helps me continually refine my skills and improve the project. Feel free to explore and share your thoughts!
