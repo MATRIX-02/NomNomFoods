@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import CuisineStyles from "./CuisineStyles";
 import { clearCart } from "../../utils/slices/cartSlice";
 import { CDN_URL } from "../../utils/constants";
 import CartList from "./CartList";
@@ -32,7 +31,7 @@ const Cart = () => {
 
 
   return cartItems.length === 0 ? (
-    <div className="absolute top-0 w-full h-full flex flex-col justify-center items-center">
+    <div className="w-screen h-[80vh] flex flex-col justify-center items-center">
       <img
         className=" w-72"
         src="./Images/Empty_cart.avif"
@@ -125,13 +124,13 @@ const Cart = () => {
             </div>
             <div className="py-1 flex justify-between text-xs text-gray-400">
               <div>Platform fee</div>
-              <div><span>&#8377;</span> 3</div>
+              <div><span>&#8377;</span> 4</div>
             </div>
             <div className="py-1 pb-4 flex justify-between text-xs text-gray-400 border-b-2 border-gray-900">
               <div>GST and Restaurant Charges</div>
               <div>NoGSThehe</div>
             </div>
-            <div className="my-3 text-sm font-bold flex justify-between"> <span>TO PAY</span><span>&#8377;{Math.ceil(totalPrice, 2) + restaurant?.feeDetails?.totalFee/100 + 3}</span></div>
+            <div className="my-3 text-sm font-bold flex justify-between"> <span>TO PAY</span><span>&#8377;{Math.ceil(totalPrice, 2) + restaurant?.feeDetails?.totalFee/100 + 4}</span></div>
           </div>
         </div>
       </div>

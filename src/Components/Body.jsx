@@ -39,11 +39,13 @@ const Body = () => {
           <div className="flex overflow-x-auto overflow-y-hidden">
             {homeSuggestions.map((items) => (
               <div key={items.id}>
+                <a href={items?.action?.link}>
                 <img
                   className="cursor-pointer h-48 max-w-max mx-3"
                   src={MENU_FOOD_IMG + items.imageId}
                   alt={items?.accessibility.altText}
                 />
+                </a>
               </div>
             ))}
           </div>
