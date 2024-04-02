@@ -59,9 +59,9 @@ const CuisineStyles = ({ items, restaurantInfo }) => {
         <div className="relative border-none cursor-pointer bg-[#f0f0f0] min-w-32 max-w-32 h-24 rounded-md p-0">
           {itemsInCart.length > 0 ? (
             <>
-              <div className="flex justify-around items-center absolute -bottom-3 left-0 right-0 m-auto px-6 w-10/12 h-2/5 bg-white rounded shadow-lg border-slate-300 border-[1px] text-[#60b246] font-semibold text-[0.75rem]">
+              <div className="flex justify-center items-center absolute -bottom-3 left-0 right-0 m-auto px-6 w-10/12 h-2/5 bg-white rounded shadow-lg border-slate-300 border-[1px] text-[#60b246] font-semibold text-[0.75rem]">
                 <div
-                  className="p-2 mx-2 text-lg cursor-pointer  animate-fade-up animate-once animate-duration-200"
+                  className="p-2 mx-2 text-lg cursor-pointer animate-fade-up animate-once animate-duration-200"
                   onClick={() => handlerRemoveItem(items)}
                 >
                   -
