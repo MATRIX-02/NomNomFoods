@@ -17,15 +17,15 @@ const useRestaurantMenu = (resId) => {
     const data = await fetch(resource);
     const json = await data.json();
 
-    const restaurantInfo = json?.data?.cards[0]?.card?.card?.info;
+    const restaurantInfo = json?.data?.cards[2]?.card?.card?.info;
     setResInfo(restaurantInfo);
 
     setOfferInfo(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.offers
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers
     );
 
     const temp =
-      json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+      json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
 
     setMenuInfo(
       temp.filter(

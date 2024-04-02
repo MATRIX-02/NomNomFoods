@@ -2,11 +2,11 @@ export const LAT = "28.6166063";
 
 export const LNG = "77.1300404";
 
-export const PROXY_CORS = "https://thingproxy.freeboard.io/fetch/";
+export const PROXY_CORS = "https://nomnomfoods-server.onrender.com/";
 
-export const generateProxyUrl = (URL) => PROXY_CORS + encodeURIComponent(URL)
+export const generateProxyUrl = (URL) => PROXY_CORS + URL
 
-export const SWIGGY_API = "https://www.swiggy.com/dapi/restaurants/list/v5?page_type=DESKTOP_WEB_LISTING&lat=" + LAT + "&lng=" + LNG;
+export const SWIGGY_API = "api/restaurants?lat=" + LAT + "&lng=" + LNG + "0000001&page_type=DESKTOP_WEB_LISTING";
 
 export const CDN_URL =
 	"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
@@ -16,7 +16,7 @@ export const LOGO_URL =
 
 export const OFFERLOGO_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_28,h_28/";
 
-export const MENU_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat="+ LAT +"&lng="+ LNG+"&restaurantId=";
+export const MENU_API = "api/menu?page-type=REGULAR_MENU&complete-menu=true&lat="+ LAT +"&lng="+ LNG+"&&submitAction=ENTER&restaurantId=";
 
 export const MENU_FOOD_IMG = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 
