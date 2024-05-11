@@ -43,7 +43,8 @@ const Header = () => {
               <span>About Us</span>
             </Link>
           </li>
-          <li>
+
+          {/* <li>
             <Link
               className="text-[#3d4152] transition-all duration-300 hover:text-[#fc8019] no-underline flex p-4"
               to="/NomNomFoods/contact"
@@ -53,7 +54,8 @@ const Header = () => {
               </span>
               <span>User</span>
             </Link>
-          </li>
+          </li> */}
+          
           <li>
             <Link
               className="text-[#3d4152] transition-all duration-300 hover:text-[#fc8019] no-underline flex p-4"
